@@ -1,2 +1,0 @@
-/* set mark " * " */
-C programmer 
