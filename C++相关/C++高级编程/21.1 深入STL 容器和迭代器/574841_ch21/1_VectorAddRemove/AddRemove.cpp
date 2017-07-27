@@ -43,7 +43,7 @@ int main(int argc, char** argv)
   vectorTwo.insert(vectorTwo.begin(), 10, 100);
 
   // Decide we only want 9 elements
-  vectorTwo.pop_back();
+  vectorTwo.pop_back();  // pop出最后一个元素，是典型的栈操作，不会返回元素，如果需要这个元素，必须先调用back取到这个元素，再调用pop_back(),进行删除
 
   // now erase the numbers 2 through 5 in vectorOne
   vectorOne.erase(vectorOne.begin() + 1, vectorOne.begin() + 5);

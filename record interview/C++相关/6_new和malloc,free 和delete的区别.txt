@@ -19,7 +19,8 @@ http://blog.csdn.net/hackbuteer1/article/details/6789164
 
 
 “new”in c++ is a:
-A. library function like malloc in c B. key word
+A. library function like malloc in c 
+B. key word
 C. operator
 D. none of the above
 【参考答案】C。
