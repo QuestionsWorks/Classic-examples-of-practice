@@ -79,3 +79,7 @@ list<string> BuddyList::getBuddies(const string& name) const
 
   return (buddies);
 }
+/*
+equal_range函数其实是upper_bound函数+lower_bound函数构成的，它的作用是求一个有序的容器中 与key相等元素的上界与下界
+equal_range的返回值是两个迭代器
+*/
