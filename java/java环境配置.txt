@@ -87,6 +87,98 @@ JVM terminated. Exit code=1
 -jar /home/libo/Downloads/eclipse//plugins/org.eclipse.equinox.launcher_1.4.0.v20161219-1356.jar 
 ------------------------------------------------------------------------------------------------------
 
+====================================================
+sudo apt-get purge openjdk*
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+可以先不安装，看看eclipse有没有问题
+====================================================
+
+eclipse 安装介绍，在eclipse官网下载正确版本，ubuntu的下载
+http://www.eclipse.org/downloads/
+Ubuntu下安装eclipse
+一、eclipse安装环境JDK的安装
+
+1、下载JDK
+
+从官网下载jdk8
+
+jdk-8u5-linux-x64.tar.gz
+
+2、解压
+$ tar -zxvf jdk-8u5-linux-x64.tar.gz
+解压出来是一个jdk1.8.0_05文件夹
+3、将文件夹移动到安装目录
+$ sudo mv jdk1.8.0_05 /usr/local/
+
+4、配置环境变量 ，更改/etc/profile文件
+
+  sudo gedit /etc/profile
+
+         在文件最后加上如下几行：
+
+export JAVA_HOME=/usr/local/jdk1.8.0_05 
+export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH 
+export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
+
+5、更改默认配置选项 ,依次执行如下命令
+
+ sudo update-alternatives  --install  /usr/bin/java java /usr/local/jdk1.8.0_05/bin/java 300
+
+sudo update-alternatives  --install  /usr/bin/javac javac /usr/local/jdk1.8.0_05/bin/javac 300
+
+i add next:
+
+sudo update-alternatives  --install  /usr/bin/jar jar /usr/local/jdk1.8.0_05/bin/jar 300
+sudo update-alternatives  --install  /usr/bin/javah javah /usr/local/jdk1.8.0_05/bin/javah 300
+
+sudo update-alternatives  --install  /usr/bin/javap javap /usr/local/jdk1.8.0_05/bin/javap 300
+
+
+二、安装eclipse
+1、下载eclipse
+从官网http://www.eclipse.org/downloads/下载Eclipse IDE for Java EE Developers的Linux版本
+eclipse-SDK-3.7.2-linux-gtk.tar.gz
+
+2、解压
+$ tar -zxvf eclipse-SDK-3.7.2-linux-gtk.tar.gz
+解压出来是一个eclipse文件夹
+
+3、将文件夹移动到安装目录
+$ sudo mv eclipse /usr/local/
+
+4、启动eclipse
+$ /usr/local/eclipse/eclipse
+
+至此，eclipse可以成功启动即安装成功。
+ 
+
+三、创建桌面链接
+
+　　Ubuntu 12.04使用了Unity界面，在桌面左侧侧多了一个启动器栏。我们可以将自己常用的软件在启动器栏放一个图标，实现快速地启动。启动器栏的每一个图标实际上都对应了/usr/share/applications目录下的一个文件。
+
+为了给eclipse创建启动栏图标，我们可以在/usr/share/applications目录下创建文件eclipse.desktop（文件名可以任意，但是文件名后缀必须是.desktop）
+
+ 输入一下命令：
+
+$ sudo su
+# gedit /usr/share/applications/eclipse.desktop
+写入以下内容
+[Desktop Entry]
+Name=Eclipse
+Comment=Eclipse SDK
+Encoding=UTF-8
+Exec=/usr/local/eclipse/eclipse
+Icon=/usr/local/eclipse/icon.xpm
+Terminal=false
+Type=Application
+Categories=Application;Development;
+
+然后我们在Dash主页搜索关键字“eclipse”，可以看到eclipse的图标
+ 可以将Eclipse图标锁定在侧边栏上，避免每次执行Eclipse时都必须再到Dash主页进行搜索。当Eclipse应用执行时，鼠标右键单击侧边栏上的Eclipse图标，在弹出的菜单里面选择“锁定到启动器”，这样就可以锁定了。
+
+ 
 
 
 
